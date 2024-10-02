@@ -11,10 +11,7 @@ function init(){
 	var game; //variable to hold game value from streamcontrol dropdown
 	var p1Wrap = $('#p1Wrapper'); //variables to shortcut copypasting text resize functions
 	var p2Wrap = $('#p2Wrapper');
-	var rdResize = $('#round');
 	var gameHold;
-	var countryHold1;
-	var countryHold2;
 	
 	xhr.overrideMimeType('application/json'); //explicitly declares that json should always be processed as a json filetype
 	
@@ -63,11 +60,6 @@ function init(){
 		
 		var p1Name = scObj['commentatorName1']; //creates local variables to store data parsed from json
 		var p2Name = scObj['commentatorName2'];
-		var p1Team = scObj['p1Team'];
-		var p2Team = scObj['p2Team'];
-		var p1Score = scObj['p1Score'];
-		var p2Score = scObj['p2Score'];
-		var round = scObj['round'];
 		
 		if(startup == true){
 			
@@ -76,11 +68,6 @@ function init(){
 			
 			$('#p1Name').html(p1Name); //changes html object values to values stored in local variables
 			$('#p2Name').html(p2Name);
-			$('#p1Team').html(p1Team);
-			$('#p2Team').html(p2Team);
-			$('#p1Score').html(p1Score);
-			$('#p2Score').html(p2Score);
-			$('#round').html(round);
 
 			p1Wrap.each(function(i, p1Wrap){ //function to resize font if text string is too long and causes div to overflow its width/height boundaries
 				while(p1Wrap.scrollWidth > p1Wrap.offsetWidth || p1Wrap.scrollHeight > p1Wrap.offsetHeight){
@@ -95,14 +82,7 @@ function init(){
 					$(p2Wrap).css('font-size', newFontSize);
 				}
 			});
-			
-			rdResize.each(function(i, rdResize){
-				while(rdResize.scrollWidth > rdResize.offsetWidth || rdResize.scrollHeight > rdResize.offsetHeight){
-					var newFontSize = (parseFloat($(rdResize).css('font-size').slice(0,-2)) * .95) + 'px';
-					$(rdResize).css('font-size', newFontSize);
-				}
-			});
-			
+						
 			TweenMax.to('#p1Wrapper',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //animates wrappers traveling back to default css positions while
 			TweenMax.to('#p2Wrapper',nameTime,{css:{x: '+0px', opacity: 1},ease:Quad.easeOut,delay:nameDelay}); //fading them in, timing/delay based on variables set in scoreboard.html
 		}
