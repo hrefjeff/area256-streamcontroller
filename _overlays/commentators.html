@@ -1,0 +1,122 @@
+<html>
+
+<head>
+
+	<script src="../js/commentators.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/greensock-js/src/minified/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/countries.js" type="text/javascript" charset="utf-8"></script>
+
+<style text="text/CSS">
+
+	@font-face {
+		src: url('../fonts/MadHomie-K7RPA.ttf');
+		font-family: "Mad Homie";
+	}
+	
+	body {
+		width: 1920px;
+		height: 1080px;
+		overflow: hidden;
+		background: transparent;
+		padding: 0px;
+		margin: 0px;
+		text-transform: uppercase;
+		color: darkred;
+		text-shadow: 2px 2px 3px DimGray;
+		font-family: "Mad Homie";
+	}
+	
+	.scoreboard {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	
+	.wrappers {
+		position: absolute;
+		width: 270px;
+		height: 70px;
+		line-height: 45px;
+		text-align: center;
+		margin-top: 5px;
+		top: 30px;
+		font-size: 100px;
+		opacity: 0;
+	}	
+	
+	#p1Wrapper {
+		left: 450px; //Location of the Name
+		top: 10;
+	}
+	
+	#p2Wrapper {
+		left: 1175px;
+		top: 30px;
+	}
+	
+	.fWrappers {
+		position: absolute;
+		width: 117px;
+		height: 45px;
+	}
+	
+	#f1Wrapper {
+		top: 30px;
+		left: 433px;
+	}
+
+	#f2Wrapper {
+		top: 30px;
+		left: 1375px;
+	}
+	
+	#gameHold {
+		display: none;
+	}
+
+
+</style>
+
+</head>
+
+<body>
+	<div id="scoreboard">
+		<div id="leftWrapper">
+			<span id="f1Wrapper" class="fWrappers"></span>
+			<span id="p1Wrapper" class="wrappers">
+				<span id="p1Name" class="names"></span>
+			</span>
+		</div>
+		<div id="rightWrapper">
+			<span id="f2Wrapper" class="fWrappers"></span>
+			<span id="p2Wrapper" class="wrappers">
+				<span id="p2Name" class="names"></span>
+			</span>
+		</div>
+	</div>
+
+<script type="text/javascript">
+
+	var nameSize = '100px'; //default font size of name wrappers, should match 'font-size' value of .wrappers
+	var rdSize = '22px'; //default font size of round container, should match 'font-size' value of #round
+	var p1Move = '+290px'; //distance on x-axis that P1 name should initially be set to prior to load-in animation
+	var p2Move = '-290px'; //distance on x-axis that P2 name should initially be set to prior to load-in animation
+	var rdMove = '-40px'; //distance on y-axis that round should initially be set to prior to load-in animation
+	var nameTime = .3; //amount of time in seconds that the load-in animation for names takes
+	var nameDelay = .2; //amount of time in seconds that the load-in animation for names is delayed before starting
+	var rdTime = .3; //amount of time in seconds that the load-in animation for round info takes
+	var rdDelay = .2; //amount of time in seconds that the load-in animation for round info is delayed before starting
+	var scTime = .3; //amount of time in seconds that the load-in animation for scores takes
+	var scDelay = .45; //amount of time in seconds that the load-in animation for scores is delayed before starting
+	var logoTime = 200; //amount of time the fade-in animation for logos is delayed before starting
+	var adjust2 = '+900px'; //distance on y-axis that scoreboards move when adjusting for 2nd webm
+	var adjust3 = '+28px'; //distance on y-axis that scoreboards move when adjusting for 3rd webm
+	var adjustLg = ['+890px','+30px',.8,'240px','140px']; //array of [distance to move logos on x-axis, "" on y-axis, scaling factor to shrink logos by, original logo width, original logo height]
+
+</script>
+
+
+</body>
+
+</html>

@@ -44,8 +44,9 @@
  <tab name="Commentary">
   <label x="10" y="14" width="96" height="13">Commentator 1</label>
   <label x="10" y="44" width="96" height="13">Commentator 2</label>
-  <lineEdit id="cTitle1" x="90" y="10" width="321" height="20" />
-  <lineEdit id="cTitle2" x="90" y="40" width="321" height="20" />
+  <lineEdit id="commentatorName1" x="90" y="10" width="321" height="20" dataSet="commentators.csv" dataField="1"/>
+  <lineEdit id="commentatorName2" x="90" y="40" width="321" height="20" dataSet="commentators.csv" dataField="1"/>
+  <button type="swap" x="15" y="70" width="60" height="23" tooltip="Swap the Commentators" id="swap2" swapSet1="commentatorName1" swapSet2="commentatorName2" saveonclick="1">Swap</button>
  </tab>
 </layout>
  
