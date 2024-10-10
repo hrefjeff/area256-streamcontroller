@@ -1,5 +1,5 @@
 <!DOCTYPE StreamControlLayout>
-<layout width="580" height="210" tabbed="1">
+<layout width="580" height="200" tabbed="1">
  <tab name="Match Info">
   <label x="10" y="14" width="46" height="13">Player 1</label>
   <label x="10" y="44" width="46" height="13">Player 2</label>
@@ -42,11 +42,23 @@
   </comboBox>
  </tab>
  <tab name="Commentary">
-  <label x="10" y="14" width="96" height="13">Commentator 1</label>
-  <label x="10" y="44" width="96" height="13">Commentator 2</label>
-  <lineEdit id="commentatorName1" x="90" y="10" width="321" height="20" dataSet="commentators.csv" dataField="1"/>
-  <lineEdit id="commentatorName2" x="90" y="40" width="321" height="20" dataSet="commentators.csv" dataField="1"/>
-  <button type="swap" x="15" y="70" width="60" height="23" tooltip="Swap the Commentators" id="swap2" swapSet1="commentatorName1" swapSet2="commentatorName2" saveonclick="1">Swap</button>
+  <button type="swap" x="3" y="0" width="60" height="23" tooltip="Swap the Commentators" id="swap2" swapSet1="commentatorName1,cHandle1" swapSet2="commentatorName2,cHandle2" saveonclick="1">Swap</button>
+  <label x="10" y="30" width="96" height="13">Commentator 1</label>
+  <label x="33" y="54" width="96" height="13">Fun Fact 1</label>
+  <label x="10" y="82" width="96" height="13">Commentator 2</label>
+  <label x="33" y="108" width="96" height="13">Fun Fact 2</label>
+  <lineEdit id="commentatorName1" x="87" y="25" width="321" height="20" dataSet="commentators.csv" dataField="1"/>
+  <lineEdit id="cHandle1" x="87" y="50" width="321" height="20" dataSet="commentators.csv" dataField="2" master="commentatorName1"/>
+  <lineEdit id="commentatorName2" x="87" y="76" width="321" height="20" dataSet="commentators.csv" dataField="1"/>
+  <lineEdit id="cHandle2" x="87" y="102" width="321" height="20" dataSet="commentators.csv" dataField="2" master="commentatorName2"/>
+ </tab>
+  <tab name="Weekly Info">
+  <label x="20" y="14" width="70" height="13">Weekly Name</label>
+  <label x="10" y="40" width="75" height="13">Weekly Number</label>
+  <label x="8" y="70" width="100" height="13">Start.gg Bracket</label>
+  <lineEdit id="WeeklyName" x="90" y="7" width="150" height="20" />
+  <spinBox id="WeeklyNumber" x="90" y="35" width="40" height="25" maximum="9999" />
+  <lineEdit id="WeeklyBracket" x="90" y="65" width="300" height="20" />
  </tab>
 </layout>
  
